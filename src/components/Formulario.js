@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Error from './Error';
 
-const Formulario = () => {
+const Formulario = ({guardarBusqueda}) => {
     const [termino, guardarTermino] = useState('');
     const [error, guardarError] = useState(false);
     const buscarImagenes = e =>{
@@ -16,6 +16,7 @@ const Formulario = () => {
         guardarError(false);
 
         //Enviar el termino de busqueda
+        guardarBusqueda(termino);
     }
     return (
         <form
